@@ -299,15 +299,25 @@ function changeColorWatchs(img) {
 //                       End Change Color Watchs
 
 
-window.addEventListener("load" , function () {
-  let backgroundIgeAndContant = document.querySelectorAll(".background , .section_1 .contant");
-    backgroundIgeAndContant.forEach((item) => {
-      item.style.opacity = "1"
-    });
 
-    let text_buttonContant = document.querySelectorAll(".text_button >* ")
-    text_buttonContant.forEach((i) => {
-      i.style.transform = "translateY(0)";
-    });
-
-})
+let backgroundIgeAndContant = document.querySelectorAll(".background , .section_1 .contant");
+let text_buttonContant = document.querySelectorAll(".text_button >* ")
+if (window.innerWidth >= 767) {
+  window.addEventListener("load" , function () {
+      backgroundIgeAndContant.forEach((item) => {
+        item.style.opacity = "1"
+      });
+      text_buttonContant.forEach((i) => {
+        i.style.transform = "translateY(0)";
+      });
+  })
+}else {
+  console.log(backgroundIgeAndContant ,text_buttonContant);
+// item.style.opacity = "1"
+backgroundIgeAndContant.forEach((item) => {
+  item.style.opacity = "1"
+});
+text_buttonContant.forEach((i) => {
+  i.style.transform = "translateY(0)";
+});
+}
